@@ -68,6 +68,7 @@ const theme = createTheme({
           fontFamily: 'Proxima Nova, Arial, sans-serif',
           fontWeight: 600,
           textTransform: 'uppercase',
+          borderRadius: '0px',
         },
       },
     },
