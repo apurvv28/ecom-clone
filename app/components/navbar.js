@@ -1,5 +1,5 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,25 +11,25 @@ import {
   ListItemText,
   Divider,
   Button,
-  Typography
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import SearchIcon from '@mui/icons-material/Search'; 
-import theme from '../themes/theme';
-import Image from 'next/image';
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import theme from "../themes/theme";
+import Image from "next/image";
 const navItems = [
-  'HOME',
-  'SPACES',
-  'PRODUCTS & SERVICES',
-  'SHOWROOMS',
-  'COMPANY',
-  'MEDIA',
-  'CONTACT'
+  "HOME",
+  "SPACES",
+  "PRODUCTS & SERVICES",
+  "SHOWROOMS",
+  "COMPANY",
+  "MEDIA",
+  "CONTACT",
 ];
 
 const Navbar = () => {
@@ -41,31 +41,24 @@ const Navbar = () => {
 
   const drawer = (
     <Box sx={{ width: 250 }} role="presentation">
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", p: 2 }}>
         <IconButton onClick={handleDrawerToggle}>
           <CloseIcon />
         </IconButton>
       </Box>
       <Divider />
-      <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
-        <StorefrontOutlinedIcon
-          sx={{
-            fontSize: 40,
-            color: 'black',
-            borderRadius: '50%',
-            p: 1
-          }}
-        />
+      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
+        <Image src="/Vector2.png" alt="Logo" width={50} height={50} />
       </Box>
       <List>
         {navItems.map((item) => (
           <ListItem
             key={item}
             sx={{
-              textTransform: 'uppercase',
-              '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.04)'
-              }
+              textTransform: "uppercase",
+              "&:hover": {
+                backgroundColor: "rgba(0, 0, 0, 0.04)",
+              },
             }}
           >
             <ListItemText primary={item} />
@@ -81,44 +74,46 @@ const Navbar = () => {
         position="static"
         elevation={0}
         sx={{
-          backgroundColor: 'white',
-          color: 'black',
-          py: { xs: 1, md: 2 }
+          backgroundColor: "white",
+          color: "black",
+          py: { xs: 1, md: 2 },
         }}
       >
-        <Box sx={{
-          display: { xs: 'none', md: 'flex' },
-          flexDirection: 'column',
-          alignItems: 'center',
-          pt: 2
-        }}>
-          <Image 
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            alignItems: "center",
+            pt: 2,
+          }}
+        >
+          <Image
             src="/Vector2.png"
             alt="Logo"
             width={100}
             height={50}
-            style={{ objectFit: 'contain' }}
-            />
+            style={{ objectFit: "contain" }}
+          />
         </Box>
         <Toolbar
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'row', md: 'row' },
-            justifyContent: { xs: 'space-between', md: 'center' },
-            alignItems: 'center',
-            maxWidth: 'lg',
-            mx: 'auto',
-            width: '100%',
+            display: "flex",
+            flexDirection: { xs: "row", md: "row" },
+            justifyContent: { xs: "space-between", md: "center" },
+            alignItems: "center",
+            maxWidth: "lg",
+            mx: "auto",
+            width: "100%",
             px: { xs: 2, md: 4 },
-            minHeight: { md: 0 }
+            minHeight: { md: 0 },
           }}
         >
           <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
-              gap: { md: '1.5rem', lg: '2rem' },
+              display: { xs: "none", md: "flex" },
+              gap: { md: "1.5rem", lg: "2rem" },
               flex: 1,
-              justifyContent: 'center'
+              justifyContent: "center",
             }}
           >
             <IconButton color="inherit" aria-label="search" sx={{ mr: 1 }}>
@@ -128,17 +123,17 @@ const Navbar = () => {
               <Button
                 key={item}
                 sx={{
-                  color: 'black',
-                  textTransform: 'uppercase',
+                  color: "black",
+                  textTransform: "uppercase",
                   fontWeight: theme.typography.fontWeightMedium,
                   fontSize: theme.typography.button.fontSize,
                   fontFamily: theme.typography.button.fontFamily,
-                  minWidth: 'auto',
+                  minWidth: "auto",
                   px: 1,
-                  '&:hover': {
-                    backgroundColor: 'transparent',
-                    opacity: 0.8
-                  }
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    opacity: 0.8,
+                  },
                 }}
               >
                 <Typography
@@ -148,7 +143,7 @@ const Navbar = () => {
                     fontWeight: theme.typography.fontWeightMedium,
                     fontSize: theme.typography.button.fontSize,
                     letterSpacing: theme.typography.button.letterSpacing,
-                    textTransform: 'uppercase'
+                    textTransform: "uppercase",
                   }}
                 >
                   {item}
@@ -156,23 +151,25 @@ const Navbar = () => {
               </Button>
             ))}
           </Box>
-            <IconButton
+          <IconButton
             color="inherit"
             aria-label="search"
             sx={{
-              display: { xs: 'flex', md: 'none' },
-              ml: 1
+              display: { xs: "flex", md: "none" },
+              ml: 1,
             }}
           >
             <SearchIcon />
           </IconButton>
-          <Box sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 2,
-            ml: { xs: 0, md: 2 },
-            marginLeft: 'auto',
-          }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+              ml: { xs: 0, md: 2 },
+              marginLeft: "auto",
+            }}
+          >
             <IconButton color="inherit" aria-label="cart">
               <ShoppingCartOutlinedIcon />
             </IconButton>
@@ -188,8 +185,8 @@ const Navbar = () => {
               edge="end"
               onClick={handleDrawerToggle}
               sx={{
-                display: { md: 'none' },
-                color: 'black'
+                display: { md: "none" },
+                color: "black",
               }}
             >
               <MenuIcon />
@@ -207,10 +204,10 @@ const Navbar = () => {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: 250
+            display: { xs: "block", md: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: 250,
             },
           }}
         >

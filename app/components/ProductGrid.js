@@ -58,7 +58,7 @@ const ProductGrid = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="lg" sx={{ py: 6 }}>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
           {products.map((product, index) => (
             <Grid
@@ -79,7 +79,7 @@ const ProductGrid = () => {
                   borderRadius: 1,
                   overflow: "hidden",
                   height: { xs: 320, sm: 340, md: 360, lg:380 },
-                  width: { xs: 180, sm: 220, md: 230, lg: 240 },
+                  width: { xs: 180, sm: 210, md: 240, lg: 260 },
                   display: "flex",
                   flexDirection: "column",
                   background: "#fff",
