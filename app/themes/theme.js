@@ -1,85 +1,92 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#111010',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-    background: {
-      default: '#fafafa',
-      paper: '#fff',
-    },
-    text: {
-      primary: '#111010',
-      secondary: '#555',
-    },
-  },
+let theme = createTheme({
   typography: {
-    fontFamily: 'Proxima Nova, Arial, sans-serif',
+    fontFamily: "Proxima Nova, Arial, sans-serif",
     h1: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontWeight: 700,
-      fontSize: '3rem',
-      color: '#111010',
+      fontSize: 40, // px
+      fontWeight: 300,
+      letterSpacing: "2px",
     },
     h2: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontWeight: 700,
-      fontSize: '2.25rem',
-      color: '#111010',
+      fontSize: 32,
+      fontWeight: 300,
+      letterSpacing: "2px",
     },
     h3: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontWeight: 700,
-      fontSize: '1.75rem',
-      color: '#111010',
+      fontSize: 26,
+      fontWeight: 500,
+    },
+    h4: {
+      fontSize: 22,
+      fontWeight: 500,
     },
     h5: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontWeight: 700,
-      fontSize: '1.25rem',
-      color: '#fff',
+      fontSize: 20,
+      fontWeight: 500,
+    },
+    h6: {
+      fontSize: 16,
+      fontWeight: 500,
     },
     body1: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontSize: '1rem',
-      color: '#111010',
+      fontSize: 16,
+      fontWeight: 400,
     },
     body2: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
-      fontSize: '0.95rem',
-      color: '#fff',
+      fontSize: 15,
+      fontWeight: 400,
+    },
+    subtitle1: {
+      fontSize: 16,
+      fontWeight: 400,
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 400,
     },
     button: {
-      fontFamily: 'Proxima Nova, Arial, sans-serif',
+      fontSize: 14,
       fontWeight: 600,
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
+      textTransform: "none",
+    },
+    caption: {
+      fontSize: 12,
+      fontWeight: 400,
+    },
+    overline: {
+      fontSize: 12,
+      fontWeight: 400,
     },
   },
   components: {
-    MuiButton: {
+    MuiBox: {
       styleOverrides: {
         root: {
-          fontFamily: 'Proxima Nova, Arial, sans-serif',
-          fontWeight: 600,
-          textTransform: 'uppercase',
-          borderRadius: '0px',
+          boxSizing: "border-box",
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          "@media (min-width:600px)": {
+            paddingLeft: "24px",
+            paddingRight: "24px",
+          },
+          "@media (min-width:900px)": {
+            paddingLeft: "32px",
+            paddingRight: "32px",
+          },
         },
       },
     },
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontFamily: 'Proxima Nova, Arial, sans-serif',
+          fontFamily: "Proxima Nova, Arial, sans-serif",
         },
       },
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

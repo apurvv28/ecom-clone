@@ -21,7 +21,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import SearchIcon from '@mui/icons-material/Search'; 
 import theme from '../themes/theme';
-
+import Image from 'next/image';
 const navItems = [
   'HOME',
   'SPACES',
@@ -92,14 +92,13 @@ const Navbar = () => {
           alignItems: 'center',
           pt: 2
         }}>
-          <StorefrontOutlinedIcon
-            sx={{
-              fontSize: 80,
-              color: 'black',
-              borderRadius: '50%',
-              mb: 1
-            }}
-          />
+          <Image 
+            src="/Vector2.png"
+            alt="Logo"
+            width={100}
+            height={50}
+            style={{ objectFit: 'contain' }}
+            />
         </Box>
         <Toolbar
           sx={{

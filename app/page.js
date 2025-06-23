@@ -6,11 +6,12 @@ import {
   IconButton,
   Button,
   useTheme,
+  Container,
 } from "@mui/material";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Image from "next/image";
-import ClientThemeProvider from "./components/ClientThemeProvider";
+import { ThemeProvider } from "@mui/material/styles";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortIcon from "@mui/icons-material/Sort";
 import SearchIcon from "@mui/icons-material/Search";
@@ -18,6 +19,8 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useRef } from "react";
 import ProductGrid from "./components/ProductGrid";
+import Offer from "./components/Offer";
+import ResultBar from "./components/ResultBar";
 
 const categories = [
   {
@@ -103,10 +106,11 @@ export default function Home() {
   };
 
   return (
-    <ClientThemeProvider>
+    <ThemeProvider theme={theme}>
       <Stack sx={{ minHeight: "100vh" }}>
         <Navbar />
-        <Box
+        <Container
+          maxWidth="sm"
           sx={{
             position: "relative",
             width: "100vw",
@@ -154,6 +158,7 @@ export default function Home() {
               sx={{
                 fontWeight: 700,
                 mb: 2,
+
                 pl: { xs: 2, md: 10 },
               }}
             >
@@ -172,7 +177,7 @@ export default function Home() {
               perfect match in our catalog.
             </Typography>
           </Box>
-        </Box>
+        </Container>
         <Box sx={{ px: 2, py: 4, position: "relative" }}>
           <Box
             ref={scrollRef}
@@ -221,140 +226,28 @@ export default function Home() {
             <ChevronRightIcon />
           </IconButton>
         </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: "space-between",
-            alignItems: { xs: "flex-start", sm: "center" },
-            px: 2,
-            py: 2,
-            borderTop: 1,
-            borderBottom: 1,
-            borderColor: "divider",
-            gap: { xs: 2, sm: 0 },
-          }}
-        >
-          <Typography
-            variant="body1"
-            sx={{
-              paddingLeft: { xs: 0, sm: 5 },
-              paddingRight: { xs: 0, sm: 5 },
-            }}
-          >
-            Showing 8 out of 22 results
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              gap: 1,
-              flexWrap: "wrap",
-              width: { xs: "100%", sm: "auto" },
-              justifyContent: { xs: "space-between", sm: "flex-end" },
-              right: 0,
-            }}
-          >
-            <Button
-              variant="outlined"
-              startIcon={<FilterListIcon />}
-              onClick={() => console.log("Filter clicked")}
-              sx={{ textTransform: "none" }}
-            >
-              Filter
-            </Button>
-            <Button
-              variant="outlined"
-              startIcon={<SortIcon />}
-              onClick={() => console.log("Sort clicked")}
-              sx={{ textTransform: "none" }}
-            >
-              Sort By
-            </Button>
-            <Button
-              variant="outlined"
-              startIcon={<SearchIcon />}
-              onClick={() => console.log("Search clicked")}
-              sx={{ textTransform: "none" }}
-            >
-              Search
-            </Button>
-          </Box>
-        </Box>
+          <ResultBar/>
+        
         <ProductGrid />
         <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-          <Button variant="contained" bgcolor="black" sx={{ mt: 2, mb: 4 }}>
-            Load More
+          <Button
+            variant="contained"
+            sx={{
+              px: 4,
+              py: 1.5,
+              bgcolor: "black",
+              borderRadius: 0,
+              textTransform: "uppercase",
+            }}
+          >
+            LOAD MORE
           </Button>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            border: "1px solid #ddd",
-            borderRadius: 2,
-            overflow: "hidden",
-            maxWidth: 800,
-            margin: "0 auto",
-            boxShadow: 2,
-          }}
-        >
-          <Box
-            sx={{
-              flex: 1,
-              padding: { xs: 2, md: 3 },
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              order: { xs: 2, md: 1 },
-            }}
-          >
-            <Typography
-              variant="h5"
-              fontWeight="bold"
-              gutterBottom
-              sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
-            >
-              Promotional Offer
-            </Typography>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              mb={2}
-              sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
-              dui mauris.
-            </Typography>
-            <Button
-              variant="contained"
-              size={theme.breakpoints.down("md") ? "small" : "medium"}
-              sx={{ alignSelf: { xs: "center", md: "flex-start" } }}
-            >
-              Shop Now
-            </Button>
-          </Box>
 
-          <Box
-            sx={{
-              flex: 1,
-              position: "relative",
-              minHeight: { xs: 150, md: 200 },
-              order: { xs: 1, md: 2 },
-            }}
-          >
-            <Image
-              src="/promo1.jpg"
-              alt="Offer"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
-          </Box>
-        </Box>
-        <Footer/>
+        <Offer />
+
+        <Footer />
       </Stack>
-    </ClientThemeProvider>
+    </ThemeProvider>
   );
 }
