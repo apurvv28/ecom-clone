@@ -25,13 +25,14 @@ const categories = [
 ];
 
 const CARD_HEIGHT = { xs: 340, sm: 360, md: 380, lg: 380 };
-const CARD_WIDTH = { xs: 210, sm: 220, md: 240, lg: 260 };
+const CARD_WIDTH = { xs: 210, sm: 220, md: 250, lg: 260 };
 
 const Categories = () => {
   const theme = useTheme();
-  const isMobileOrTab = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobileOrTab = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
+    
     <Container
       maxWidth="lg"
       sx={{

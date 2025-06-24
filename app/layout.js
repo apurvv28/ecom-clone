@@ -1,22 +1,20 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import localfont from "next/font/local";
 
-const Nova = localfont({
-  src: [{
-      path: "../public/fonts/Fontspring-DEMO-proximanova-black.otf",
-      weight: "400"
-    }],
-  variable: "--font-nova",
-});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const proximaNova = localFont({
+  src: "../public/fonts/Fontspring-DEMO-proximanova-regular.otf",
+  variable: "--font-proxima-nova",
+  display: "swap",
 });
 
 export const metadata = {
@@ -26,10 +24,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${Nova.variable} ${Nova.variable} antialiased`}
-      >
+    <html lang="en" className={`${proximaNova.className} ${proximaNova.variable} ${proximaNova.variable}`}>
+      <body className={proximaNova.className}>
         {children}
       </body>
     </html>

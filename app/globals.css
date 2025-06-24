@@ -22,5 +22,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: ProximaNova, sans-serif;
+  font-family: var(--font-proxima-nova), Proxima Nova, Arial, sans-serif;
+}
+
+body, * {
+  font-family: 'Proxima Nova', var(--font-proxima-nova), Arial, sans-serif !important;
 }

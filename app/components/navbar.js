@@ -12,15 +12,14 @@ import {
   Divider,
   Button,
   Typography,
+  Grid
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import theme from "../themes/theme";
 import Image from "next/image";
 const navItems = [
   "HOME",
@@ -70,6 +69,7 @@ const Navbar = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      
       <AppBar
         position="static"
         elevation={0}
@@ -125,9 +125,6 @@ const Navbar = () => {
                 sx={{
                   color: "black",
                   textTransform: "uppercase",
-                  fontWeight: theme.typography.fontWeightMedium,
-                  fontSize: theme.typography.button.fontSize,
-                  fontFamily: theme.typography.button.fontFamily,
                   minWidth: "auto",
                   px: 1,
                   "&:hover": {
@@ -139,11 +136,8 @@ const Navbar = () => {
                 <Typography
                   variant="button"
                   sx={{
-                    fontFamily: theme.typography.button.fontFamily,
-                    fontWeight: theme.typography.fontWeightMedium,
-                    fontSize: theme.typography.button.fontSize,
-                    letterSpacing: theme.typography.button.letterSpacing,
                     textTransform: "uppercase",
+                    fontWeight: 300,
                   }}
                 >
                   {item}

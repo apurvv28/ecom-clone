@@ -21,14 +21,15 @@ const Footer = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid
+        <Grid 
           container
           spacing={{ xs: 4, md: 6 }}
-          justifyContent={{ xs: "flex-start", md: "space-between" }}
+          justifyContent={{ xs: "flex-start", sm:"flex-start", md: "space-between" }}
           alignItems="flex-start"
           direction={{ xs: "column", sm: "row" }}
-        >
-          <Grid item xs={12} sm={6} md={3}>
+           
+         >
+          <Grid xs={12} sm={6} md={3}>
             <Box
               sx={{
                 textAlign: { xs: "left", sm: "left", md: "left" },
@@ -46,14 +47,13 @@ const Footer = () => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={3} md={2}>
+          <Grid xs={12} sm={3} md={2}>
             <Box>
               <Typography
                 variant="h6"
                 sx={{
                   mb: 2,
                   fontSize: { xs: 18, sm: 20, md: 22 },
-                  fontWeight: 500,
                 }}
               >
                 Products
@@ -66,7 +66,6 @@ const Footer = () => {
                     sx={{
                       color: "white",
                       fontSize: { xs: 13, sm: 14, md: 15 },
-                      fontWeight: 400,
                     }}
                   >
                     {item}
@@ -75,14 +74,13 @@ const Footer = () => {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={3} md={2}>
+          <Grid xs={12} sm={3} md={2}>
             <Box>
               <Typography
                 variant="h6"
                 sx={{
                   mb: 2,
                   fontSize: { xs: 18, sm: 20, md: 22 },
-                  fontWeight: 500,
                 }}
               >
                 Services
@@ -99,7 +97,6 @@ const Footer = () => {
                     sx={{
                       color: "white",
                       fontSize: { xs: 13, sm: 14, md: 15 },
-                      fontWeight: 400,
                     }}
                   >
                     {item}
@@ -108,19 +105,18 @@ const Footer = () => {
               </Stack>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid xs={12} sm={12} md={4}>
             <Box
               sx={{
                 textAlign: { xs: "left", sm: "left", md: "left" },
                 mt: { xs: 2, sm: 0 },
+                maxWidth: { xs: "100%", sm: "60%", md: "100%" },
               }}
             >
               <Typography
                 variant="h6"
                 sx={{
                   mb: 2,
-                  fontSize: { xs: 18, sm: 20, md: 22 },
-                  fontWeight: 500,
                 }}
               >
                 Contact Information
@@ -129,9 +125,7 @@ const Footer = () => {
                 variant="body2"
                 sx={{
                   color: "white",
-                  mb: 1,
-                  fontSize: { xs: 13, sm: 14, md: 15 },
-                  fontWeight: 400,
+                  
                 }}
               >
                 3181 Al Imam Saud Ibn Abdul Aziz Branch Rd,
@@ -140,9 +134,6 @@ const Footer = () => {
                 variant="body2"
                 sx={{
                   color: "white",
-                  mb: 1,
-                  fontSize: { xs: 13, sm: 14, md: 15 },
-                  fontWeight: 400,
                 }}
               >
                 An Nuzhah, Riyadh 12474,
@@ -151,9 +142,6 @@ const Footer = () => {
                 variant="body2"
                 sx={{
                   color: "white",
-                  mb: 1,
-                  fontSize: { xs: 13, sm: 14, md: 15 },
-                  fontWeight: 400,
                 }}
               >
                 Saudi Arabia
@@ -198,8 +186,6 @@ const Footer = () => {
             variant="body2"
             sx={{
               color: "grey.500",
-              fontSize: { xs: 12, sm: 13, md: 14 },
-              fontWeight: 400,
             }}
           >
             Copyright © 2025 - All Rights Reserved
@@ -208,8 +194,6 @@ const Footer = () => {
             variant="body2"
             sx={{
               color: "grey.500",
-              fontSize: { xs: 12, sm: 13, md: 14 },
-              fontWeight: 400,
             }}
           >
             Created with love by thecreation.design

@@ -9,7 +9,7 @@ import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const ResultBar = () => (
-  <Container maxWidth="lg" sx={{ px: { xs: 1, sm: 2, md: 0 } }}>
+  <Container maxWidth="lg" sx={{ px: { xs: 0, sm: 2, md: 0 } }}>
     <Box
       sx={{
         display: "flex",
@@ -26,9 +26,9 @@ const ResultBar = () => (
       <Typography
         variant="body1"
         sx={{
-          fontWeight: 500,
           fontSize: { xs: 15, sm: 16 },
           mb: { xs: 1, sm: 0 },
+          color: "grey.600"
         }}
       >
         Showing 8 out of 22 results
@@ -49,10 +49,8 @@ const ResultBar = () => (
           color="inherit"
           endIcon={<TuneIcon />}
           sx={{
-            textTransform: "none",
-            minWidth: { xs: 0, sm: 64 },
             px: { xs: 1, sm: 2 },
-            fontSize: { xs: 13, sm: 15 },
+            fontWeight: 300
           }}
         >
           Filter

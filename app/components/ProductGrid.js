@@ -9,49 +9,49 @@ const ProductGrid = () => {
     {
       name: "Zurich Vision 60×60",
       price: "237.99 SAR",
-      originalPrice: "440.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img1.jpg",
     },
     {
       name: "Zurich Pearl 60×60",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "312.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img2.jpg",
     },
     {
       name: "Zurich Grey 60×60",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "319.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img3.jpg",
     },
     {
       name: "Zurich Dark Grey 60×60",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "375.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img4.jpg",
     },
     {
       name: "Windsor White OAK",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "312.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img5.jpg",
     },
     {
       name: "Sicily Grey Décor 30×60",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "312.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img6.jpg",
     },
     {
       name: "Sardinia White",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "312.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img7.jpg",
     },
     {
       name: "Sicily Grey 30×60",
-      price: "312.49 SAR",
-      originalPrice: "440.99 SAR",
+      price: "312.99 SAR",
+      originalPrice: "550.99 SAR",
       image: "/img8.jpg",
     },
   ];
@@ -62,7 +62,6 @@ const ProductGrid = () => {
         <Grid container spacing={4}>
           {products.map((product, index) => (
             <Grid
-              item
               xs={12}
               sm={6}
               md={4}
@@ -79,7 +78,7 @@ const ProductGrid = () => {
                   borderRadius: 1,
                   overflow: "hidden",
                   height: { xs: 320, sm: 340, md: 360, lg:380 },
-                  width: { xs: 180, sm: 210, md: 240, lg: 260 },
+                  width: { xs: 170, sm: 230, md: 216, lg: 260 },
                   display: "flex",
                   flexDirection: "column",
                   background: "#fff",

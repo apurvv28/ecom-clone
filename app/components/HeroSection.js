@@ -62,7 +62,7 @@ const HeroSection = () => {
             fontSize: { xs: 32, sm: 48, md: 56 },
             lineHeight: 1.1,
             textAlign: "left",
-            
+            fontFamily: "Proxima Nova, sans-serif",
           }}
         >
           CATALOG
@@ -74,6 +74,7 @@ const HeroSection = () => {
             opacity: 0.85,
             maxWidth: 800,
             textAlign: "left",
+            fontFamily: "Proxima Nova, sans-serif",
           }}
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />
