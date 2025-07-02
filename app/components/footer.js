@@ -21,14 +21,17 @@ const Footer = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Grid 
+        <Grid
           container
           spacing={{ xs: 4, md: 6 }}
-          justifyContent={{ xs: "flex-start", sm:"flex-start", md: "space-between" }}
+          justifyContent={{
+            xs: "flex-start",
+            sm: "flex-start",
+            md: "space-between",
+          }}
           alignItems="flex-start"
           direction={{ xs: "column", sm: "row" }}
-           
-         >
+        >
           <Grid xs={12} sm={6} md={3}>
             <Box
               sx={{
@@ -47,106 +50,140 @@ const Footer = () => {
               />
             </Box>
           </Grid>
-          <Grid xs={12} sm={3} md={2}>
-            <Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  mb: 2,
-                  fontSize: { xs: 18, sm: 20, md: 22 },
-                }}
-              >
-                Products
-              </Typography>
-              <Stack spacing={1}>
-                {["Sand Stone", "Stone", "Cement", "Soft Stone"].map((item) => (
-                  <Typography
-                    variant="body2"
-                    key={item}
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: 13, sm: 14, md: 15 },
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                ))}
-              </Stack>
-            </Box>
-          </Grid>
-          <Grid xs={12} sm={3} md={2}>
-            <Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  mb: 2,
-                  fontSize: { xs: 18, sm: 20, md: 22 },
-                }}
-              >
-                Services
-              </Typography>
-              <Stack spacing={1}>
-                {[
-                  "Measurement Service",
-                  "Product Advice",
-                  "Interior Design",
-                ].map((item) => (
-                  <Typography
-                    variant="body2"
-                    key={item}
-                    sx={{
-                      color: "white",
-                      fontSize: { xs: 13, sm: 14, md: 15 },
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                ))}
-              </Stack>
-            </Box>
-          </Grid>
-          <Grid xs={12} sm={12} md={4}>
-            <Box
+          <Grid
+            xs={12}
+            sm={6}
+            md={4}
+            container
+            spacing={2}
+            sx={{
+              flexDirection: { xs: "row", sm: "row", md: "row", lg: "row" },
+              mb: { xs: 2, sm: 0, md: 0 },
+              pr: { xs: 1.5, sm: 2, md: 0 },
+              mr: { xs: 3, sm: 3, md: 3, lg: 3 },
+              gap: { xs: 2, sm: 2, md: 3, lg: 4 },
+            }}
+          >
+            <Grid item xs={6} sm={6} md={4} lg={4}>
+              <Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: 18, sm: 20, md: 22 },
+                  }}
+                >
+                  Products
+                </Typography>
+                <Stack spacing={1}>
+                  {["Sand Stone", "Stone", "Cement", "Soft Stone"].map(
+                    (item) => (
+                      <Typography
+                        variant="body2"
+                        key={item}
+                        sx={{
+                          color: "white",
+                          fontSize: { xs: 13, sm: 14, md: 15 },
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    )
+                  )}
+                </Stack>
+              </Box>
+            </Grid>
+            <Grid xs={6} sm={6} md={4} lg={4}>
+              <Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: 18, sm: 20, md: 22 },
+                  }}
+                >
+                  Services
+                </Typography>
+                <Stack spacing={1}>
+                  {[
+                    "Measurement Service",
+                    "Product Advice",
+                    "Interior Design",
+                  ].map((item) => (
+                    <Typography
+                      variant="body2"
+                      key={item}
+                      sx={{
+                        color: "white",
+                        fontSize: { xs: 13, sm: 14, md: 15 },
+                      }}
+                    >
+                      {item}
+                    </Typography>
+                  ))}
+                </Stack>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={4}
+              lg={4}
               sx={{
-                textAlign: { xs: "left", sm: "left", md: "left" },
-                mt: { xs: 2, sm: 0 },
-                maxWidth: { xs: "100%", sm: "60%", md: "100%" },
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: { xs: "flex-start", md: "flex-start" },
+                alignItems: { xs: "flex-end", md: "flex-end" }, 
               }}
             >
-              <Typography
-                variant="h6"
+              <Box
                 sx={{
-                  mb: 2,
+                  textAlign: { xs: "left", sm: "left", md: "left" },
+                  maxWidth: { xs: "100%", sm: "100%", md: "100%" },
                 }}
               >
-                Contact Information
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "white",
-                  
-                }}
-              >
-                3181 Al Imam Saud Ibn Abdul Aziz Branch Rd,
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "white",
-                }}
-              >
-                An Nuzhah, Riyadh 12474,
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "white",
-                }}
-              >
-                Saudi Arabia
-              </Typography>
-            </Box>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    mb: 2,
+                    fontSize: { xs: 18, sm: 20, md: 22 },
+                  }}
+                >
+                  Contact Information
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "white",
+                    mb: 1,
+                    fontSize: { xs: 13, sm: 14, md: 15 },
+                  }}
+                >
+                  3181 Al Imam Saud Ibn Abdul Aziz Branch Rd,
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "white",
+                    mb: 1,
+                    fontSize: { xs: 13, sm: 14, md: 15 },
+                  }}
+                >
+                  An Nuzhah, Riyadh 12474,
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "white",
+                    mb: 1,
+                    fontSize: { xs: 13, sm: 14, md: 15 },
+                  }}
+                >
+                  Saudi Arabia
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
         <Stack
@@ -177,7 +214,7 @@ const Footer = () => {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             justifyContent: { xs: "flex-start", sm: "space-between" },
-            alignItems: { xs: "flex-start", sm: "center" },
+            alignItems: { xs: "center", sm: "center" },
             gap: 2,
             width: "100%",
           }}

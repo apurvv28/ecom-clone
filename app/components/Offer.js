@@ -1,20 +1,23 @@
 import React from "react";
-import { Box, Typography, Container, Button, Grid } from "@mui/material";
-
+import { Box, Typography, Container, Button, Grid, ThemeProvider, useTheme } from "@mui/material";
 const PromotionalBanner = () => {
+  const theme = useTheme();
   return (
+    <ThemeProvider theme={theme}>
     <Box
       sx={{
         width: "100%",
         bgcolor: "background.paper",
-        py: { xs: 3, md: 6 },
+        py: { xs: 2, md: 3 }, 
       }}
     >
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="md"
+        
+      >
         <Grid
           sx={{
-            minHeight: { xs: 180, sm: 220, md: 240, lg: 260 },
-            borderRadius: 2,
+            minHeight: { xs: 80, sm: 90, md: 90, lg: 100 },
             overflow: "hidden",
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
@@ -27,26 +30,27 @@ const PromotionalBanner = () => {
               flex: 1,
               bgcolor: "white",
               display: "flex",
-              alignItems: "center",
+              alignItems: "left",
               justifyContent: { xs: "center", md: "flex-start" },
-              pl: { xs: 3, sm: 4, md: 6 },
-              pt: { xs: 3, sm: 4, md: 6 },
-              pb: { xs: 3, sm: 4, md: 6 },
-              minHeight: { xs: 200, md: "100%" },
+              pl: { xs: 2, sm: 3, md: 4 }, 
+              pt: { xs: 2, sm: 3, md: 4 },
+              pb: { xs: 2, sm: 3, md: 4 },
+              minHeight: { xs: 100, md: "100%" }, 
               clipPath: {
                 xs: "none",
-                md: "polygon(0 0, 90% 0, 100% 100%, 0% 100%)", 
+                md: "polygon(0 0, 90% 0, 100% 100%, 0% 100%)",
               },
               zIndex: 1,
             }}
           >
-            <Grid sx={{ width: "100%", maxWidth: 480 }}>
+            <Grid sx={{ width: "100%", maxWidth: 500 }}>
               <Typography
                 variant="h3"
                 sx={{
-                  mb: 2,
-                  fontSize: { xs: 22, sm: 26, md: 32, lg: 40 },
+                  mb: 1,
+                  fontSize: { xs: 18, sm: 20, md: 24, lg: 28 },
                   fontWeight: 500,
+                  fontFamily: "'Proxima Nova', var(--font-proxima-nova), Arial, sans-serif !important", 
                 }}
               >
                 Promotional Banner
@@ -54,8 +58,8 @@ const PromotionalBanner = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  mb: 3,
-                  fontSize: { xs: 14, sm: 16, md: 18, lg: 20 },
+                  mb: 2,
+                  fontSize: { xs: 13, sm: 14, md: 15, lg: 17 }, 
                   fontWeight: 400,
                 }}
               >
@@ -66,11 +70,12 @@ const PromotionalBanner = () => {
               <Button
                 variant="contained"
                 sx={{
-                  px: 4,
-                  py: 1.5,
+                  px: 3,
+                  py: 1,
                   bgcolor: "black",
                   borderRadius: 0,
                   textTransform: "uppercase",
+                  fontSize: 12,
                 }}
               >
                 Learn More
@@ -83,11 +88,11 @@ const PromotionalBanner = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              minHeight: { xs: 200, md: "100%" },
+              minHeight: { xs: 100, md: "100%" }, 
               p: 0,
               clipPath: {
                 xs: "none",
-                md: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)", 
+                md: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)",
               },
               zIndex: 0,
             }}
@@ -98,8 +103,8 @@ const PromotionalBanner = () => {
               alt="Promotional"
               sx={{
                 width: "100%",
-                height: { xs: 200, sm: 250, md: "100%" },
-                minHeight: 200,
+                height: { xs: 100, sm: 120, md: "100%" },
+                minHeight: 100,
                 objectFit: "cover",
                 borderRadius: 0,
                 display: "block",
@@ -109,6 +114,7 @@ const PromotionalBanner = () => {
         </Grid>
       </Container>
     </Box>
+    </ThemeProvider>
   );
 };
 

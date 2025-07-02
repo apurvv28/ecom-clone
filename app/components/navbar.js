@@ -12,7 +12,9 @@ import {
   Divider,
   Button,
   Typography,
-  Grid
+  Container,
+  ThemeProvider,
+  useTheme
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -33,12 +35,13 @@ const navItems = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const theme = useTheme();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
+    
     <Box sx={{ width: 250 }} role="presentation">
       <Box sx={{ display: "flex", justifyContent: "flex-end", p: 2 }}>
         <IconButton onClick={handleDrawerToggle}>
@@ -68,6 +71,8 @@ const Navbar = () => {
   );
 
   return (
+    <ThemeProvider theme={theme}>
+    <Container maxWidth="lg">
     <Box sx={{ flexGrow: 1 }}>
       
       <AppBar
@@ -76,15 +81,16 @@ const Navbar = () => {
         sx={{
           backgroundColor: "white",
           color: "black",
-          py: { xs: 1, md: 2 },
+          py: { xs: 2, md: 3,  },
         }}
       >
         <Box
           sx={{
-            display: { xs: "none", md: "flex" },
-            flexDirection: "column",
+            display: { xs: "flex", md: "none" },
+            justifyContent: "center",
             alignItems: "center",
-            pt: 2,
+            width: "100%",
+            mb: 1,
           }}
         >
           <Image
@@ -93,6 +99,24 @@ const Navbar = () => {
             width={100}
             height={50}
             style={{ objectFit: "contain" }}
+          />
+        </Box>
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            alignItems: "center",
+            pt: 2,
+            mb: 2
+          }}
+        >
+          <Image
+            src="/Vector2.png"
+            alt="Logo"
+            width={100}
+            height={50}
+            style={{ objectFit: "contain" }}
+            
           />
         </Box>
         <Toolbar
@@ -111,12 +135,12 @@ const Navbar = () => {
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
-              gap: { md: "1.5rem", lg: "2rem" },
+              gap: { md: "1rem", lg: "2rem" },
               flex: 1,
               justifyContent: "center",
             }}
           >
-            <IconButton color="inherit" aria-label="search" sx={{ mr: 1 }}>
+            <IconButton color="inherit" aria-label="search">
               <SearchIcon />
             </IconButton>
             {navItems.map((item) => (
@@ -159,7 +183,7 @@ const Navbar = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              gap: 2,
+              gap: 0.5,
               ml: { xs: 0, md: 2 },
               marginLeft: "auto",
             }}
@@ -209,6 +233,8 @@ const Navbar = () => {
         </Drawer>
       </Box>
     </Box>
+    </Container>
+    </ThemeProvider>
   );
 };
 

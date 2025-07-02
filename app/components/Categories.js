@@ -1,8 +1,7 @@
 import React from "react";
 import { Typography, Container, Grid } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { ThemeProvider, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-
 const categories = [
   {
     title: "Living Rooms",
@@ -26,13 +25,13 @@ const categories = [
 
 const CARD_HEIGHT = { xs: 340, sm: 360, md: 380, lg: 380 };
 const CARD_WIDTH = { xs: 210, sm: 220, md: 250, lg: 260 };
-
+ 
 const Categories = () => {
   const theme = useTheme();
   const isMobileOrTab = useMediaQuery(theme.breakpoints.down("lg"));
-
+ 
   return (
-    
+    <ThemeProvider theme={theme}>
     <Container
       maxWidth="lg"
       sx={{
@@ -285,6 +284,7 @@ const Categories = () => {
         )}
       </Grid>
     </Container>
+    </ThemeProvider>
   );
 };
 

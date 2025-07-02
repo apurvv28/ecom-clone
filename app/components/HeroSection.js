@@ -1,9 +1,11 @@
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, ThemeProvider, Typography, useTheme } from '@mui/material'
 import Image from 'next/image'
 
 const HeroSection = () => {
+  const theme = useTheme();
   return (
+    <ThemeProvider theme={theme}>
     <Box
       sx={{
         position: "relative",
@@ -59,7 +61,7 @@ const HeroSection = () => {
             fontWeight: 700,
             mb: 2,
             color: "#fff",
-            fontSize: { xs: 32, sm: 48, md: 56 },
+            fontSize: { xs: 30, sm: 46, md: 54 },
             lineHeight: 1.1,
             textAlign: "left",
             fontFamily: "Proxima Nova, sans-serif",
@@ -72,7 +74,7 @@ const HeroSection = () => {
           sx={{
             color: "#fff",
             opacity: 0.85,
-            maxWidth: 800,
+            maxWidth: 700,
             textAlign: "left",
             fontFamily: "Proxima Nova, sans-serif",
           }}
@@ -82,6 +84,7 @@ const HeroSection = () => {
         </Typography>
       </Container>
     </Box>
+    </ThemeProvider>
   )
 }
 

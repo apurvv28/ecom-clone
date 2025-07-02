@@ -6,8 +6,6 @@ const Buttons = () => {
           <Button
             variant="contained"
             sx={{
-              px: 4,
-              py: 1.5,
               bgcolor: "black",
               borderRadius: 0,
               textTransform: "uppercase",

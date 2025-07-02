@@ -1,7 +1,5 @@
 "use client";
-import { Stack, useTheme } from "@mui/material";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import { Stack, useTheme, Grid } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import ProductGrid from "./components/ProductGrid";
 import Offer from "./components/Offer";
@@ -16,14 +14,26 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <Stack>
-        <Navbar />
         <HeroSection />
         <CategoriesPage />
         <ResultBar />
         <ProductGrid />
         <Buttons />
-        <Offer />
-        <Footer />
+        <Grid
+          sx={{
+            backgroundImage: "url('/Vector4.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            py: { xs: 4, md: 8 },
+            px: { xs: 2, md: 6 },
+          }}
+        >
+          <Offer />
+        </Grid>
       </Stack>
     </ThemeProvider>
   );

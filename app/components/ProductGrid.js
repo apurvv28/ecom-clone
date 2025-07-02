@@ -59,13 +59,14 @@ const ProductGrid = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Grid container spacing={4}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
           {products.map((product, index) => (
             <Grid
+              item
               xs={12}
               sm={6}
               md={4}
-              lg={3} 
+              lg={3}
               key={index}
               sx={{
                 display: "flex",
@@ -74,23 +75,49 @@ const ProductGrid = () => {
             >
               <Box
                 sx={{
-                  border: `1px solid ${theme.palette.divider}`,
-                  borderRadius: 1,
+                  border: `1px solid`,
+                  borderColor: "grey.200",
                   overflow: "hidden",
-                  height: { xs: 320, sm: 340, md: 360, lg:380 },
-                  width: { xs: 170, sm: 230, md: 216, lg: 260 },
+                  width: {
+                    xs: "44vw", 
+                    sm: "33vw",
+                    md: "21vw",
+                    lg: 262,
+                  },
+                  maxWidth: {
+                    sm: 240,
+                    md: 260,
+                    lg: 280,
+                  },
+                  height: {
+                    xs: 250,
+                    sm: 260,
+                    md: 300,
+                    lg: 340,
+                  },
                   display: "flex",
                   flexDirection: "column",
                   background: "#fff",
+                  boxShadow: 1,
+                  transition: "box-shadow 0.2s",
+                  "&:hover": {
+                    boxShadow: 4,
+                  },
                 }}
               >
                 <Box
                   sx={{
                     width: "100%",
-                    height: 180,
+                    flex: "0 0 70%",
+                    height: {
+                      xs: "70%",
+                      sm: "70%",
+                      md: "70%",
+                      lg: "70%",
+                    },
+                    minHeight: 0,
                     position: "relative",
                     overflow: "hidden",
-                    flexShrink: 0,
                   }}
                 >
                   <Box
@@ -101,38 +128,56 @@ const ProductGrid = () => {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+                      display: "block",
                     }}
                   />
                 </Box>
                 <Box
                   sx={{
-                    p: 2,
-                    flexGrow: 1,
+                    flex: "1 1 30%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    px: { xs: 1, sm: 1.5, md: 2 },
+                    py: { xs: 1, sm: 1.5 },
+                    minHeight: 0,
                   }}
                 >
                   <Typography
-                    variant="h6"
+                    variant="subtitle2"
                     sx={{
                       textAlign: "center",
-                      fontWeight: 600,
-                      mb: 1,
+                      fontWeight: 500,
+                      mb: 0.5,
+                      fontSize: {
+                        xs: 15,
+                        sm: 17,
+                        md: 18,
+                        lg: 20,
+                      },
+                      lineHeight: 1.2,
+                      maxWidth: "100%",
+                      overflow: "hidden",
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {product.name}
                   </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
                     {product.originalPrice && (
                       <Typography
-                        variant="body2"
+                        variant="caption"
                         sx={{
                           textDecoration: "line-through",
                           color: "grey.400",
                           fontWeight: 400,
-                          fontSize: { xs: 15, sm: 16 },
+                          fontSize: {
+                            xs: 10,
+                            sm: 11,
+                            md: 12,
+                            lg: 13,
+                          },
                         }}
                       >
                         {product.originalPrice}
@@ -141,9 +186,14 @@ const ProductGrid = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontWeight: 500,
+                        fontWeight: 600,
                         color: "grey.900",
-                        fontSize: { xs: 17, sm: 18 },
+                        fontSize: {
+                          xs: 13,
+                          sm: 14,
+                          md: 15,
+                          lg: 16,
+                        },
                       }}
                     >
                       {product.price}
